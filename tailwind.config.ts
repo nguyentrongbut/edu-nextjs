@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#615efc',
+        primary: '#ff9eaa',
       },
       fontFamily: {
         primary: ["var(--font-manrope)"]
