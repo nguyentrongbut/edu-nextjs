@@ -1,6 +1,16 @@
-import { connectToDatabase } from "@/lib/mongoose";
+import { CourseGrid } from "@/components/common";
+import CourseItem from "@/components/course/CourseItem";
+import Heading from "@/components/typography/Heading";
 
-export default async function Home() {
-    // const connect = connectToDatabase();
-    return <div></div>;
+export default function Home() {
+    return (
+        <div>
+            <Heading>Khám phá</Heading>
+            <CourseGrid>
+                <CourseItem></CourseItem>
+                <CourseItem></CourseItem>
+                <CourseItem></CourseItem>
+            </CourseGrid>
+        </div>
+    );
 }
