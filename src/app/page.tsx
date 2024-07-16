@@ -1,5 +1,6 @@
-export default function Home() {
-    return (
-      <div></div>
-    )
+import { connectToDatabase } from "@/lib/mongoose";
+
+export default async function Home() {
+    const connect = connectToDatabase();
+    return <div></div>;
 }
