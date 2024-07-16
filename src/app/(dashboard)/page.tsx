@@ -1,6 +1,6 @@
 import { connectToDatabase } from "@/lib/mongoose";
 
 export default async function Home() {
-    const connect = connectToDatabase();
+    // const connect = connectToDatabase();
     return <div></div>;
 }
