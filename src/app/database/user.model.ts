@@ -2,21 +2,21 @@ import { EUserRole, EUserStatus } from "@/types/enums";
 import { Document, model, models, Schema } from "mongoose";
 
 // Định nghĩa interface User với các thuộc tính cần thiết
-interface User extends Document {
+export interface IUser extends Document {
     clerkId: string;
     name: string;
     username: string;
-    email_address: string;
+    email: string;
     avatar: string;
     // khoa ngoai
     courses: Schema.Types.ObjectId[];
     status: EUserStatus;
     role: EUserRole;
-    createdAt: Date;
+    create_at: Date;
 }
 
 // Định nghĩa schema cho User
-const userSchema = new Schema<User>({
+const userSchema = new Schema<IUser>({
     clerkId: {
         type: String,
     },
@@ -25,9 +25,13 @@ const userSchema = new Schema<User>({
     },
     username: {
         type: String,
+        unique: true,
+        required: true
     },
-    email_address: {
+    email: {
         type: String,
+        unique: true,
+        required: true
     },
     avatar: {
         type: String,
@@ -37,7 +41,7 @@ const userSchema = new Schema<User>({
         // reference  Liên kết tới bảng Course
         ref: "Course"
     },],
-    createdAt: {
+    create_at: {
         type: Date,
         default: Date.now, // Đặt giá trị mặc định là thời gian hiện tại
     },

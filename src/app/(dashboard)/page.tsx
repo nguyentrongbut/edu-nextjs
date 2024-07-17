@@ -1,8 +1,14 @@
 import { CourseGrid } from "@/components/common";
 import CourseItem from "@/components/course/CourseItem";
 import Heading from "@/components/typography/Heading";
+import createUser from "@/lib/actions/user.actions";
 
-export default function Home() {
+export default async function Home() {
+    const user = await createUser({
+        clerkId: "clerk_123",
+        email_address: "cloly@gmail.com",
+        username: "cloly",
+    });
     return (
         <div>
             <Heading>Khám phá</Heading>

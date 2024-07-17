@@ -2,8 +2,9 @@
 
 import User from "@/app/database/user.model";
 import { connectToDatabase } from "@/lib/mongoose";
+import { TCreateUserParams } from "@/types";
 
-export default async function createUser(params: any) {
+export default async function createUser(params: TCreateUserParams) {
     try {
         connectToDatabase();
         const newUser = await User.create(params);
